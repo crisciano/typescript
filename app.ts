@@ -6,70 +6,24 @@
 // debug arquivo js             ### node "nome do arquivo"
 
 console.log("Inicializando js .... ");
-
-class Carro{
-    private modelo: string
-    private numeroDePortas: number
-    private velocidade: number = 0 
-
-    constructor(m: string, n: number, v: number){
-        this.modelo = m
-        this.numeroDePortas = n
-        this.velocidade = v
-    }
-    public acelerar(): void{
-        this.velocidade = this.velocidade + 10;
-    }
-    public parar(): void{
-        this.velocidade = 0;
-    }
-    public velocidadeAtual(): number{
-        return this.velocidade;
-    }
-}
-
-class Concessionaria {
-    private endereco: string
-    private listaDeCarros: any
-
-    constructor(e: string) {
-        this.endereco = e
-    }
-
-    public fornecerEndereco() {
-
-    }
-    public mostrarListaDeCarros(){
-
-    }
-}
-
-class pessoa {
-    private nome: string
-    private carroPreferido: string
-    private carro: string
-
-    constructor(n: string, cp: string, c: string ) {
-        this.nome: n
-        this.carroPreferido: cp
-        this.carro: c
-    }
-    public dizerNome(){
-
-    }
-    public dizerCarroPreferido(){
-
-    }
-    public comprarCarro(){
-
-    }
-    public dizerCarroQueTem(){
-        
-    }
-}
-
+import { Carro } from './carro'
+import { Concessionaria } from './concessionaria'
+import { Pessoa } from './pessoa'
 console.log("Finalizando ts .....");
 
+let carroA = new Carro('fusca', 2)
+let carroB = new Carro('uno', 2)
+let carroC = new Carro('palio', 2)
 
-let carroA = new Carro('ka', 4, 0);
-console.log(carroA);
+// let listaDeCarros: Array<Carro> = [ carroA, carroB, carroC ];
+let listaDeCarros: Array<Carro> = [];
+
+listaDeCarros.push(carroA)
+listaDeCarros.push(carroB)
+listaDeCarros.push(carroC)
+
+let concessionaria = new Concessionaria('telles')
+
+concessionaria.lista(listaDeCarros)
+
+console.log(concessionaria.mostrarListaDeCarros());
