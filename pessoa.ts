@@ -1,3 +1,5 @@
+import { Carro } from './carro'
+
 export class Pessoa{
     private nome: string
     private carroPreferido: string
@@ -16,7 +18,7 @@ export class Pessoa{
         return this.carroPreferido
     }
 
-    public comprarCarro(carro: any): void {
+    public comprarCarro(carro: Carro): void {
         this.carro = carro
 
     }
